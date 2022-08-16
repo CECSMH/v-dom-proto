@@ -1,6 +1,7 @@
 
 import { diff } from "./diff.js";
 import Element from "./element.js";
+import listdiff from "./listDiff.js";
 
 export default function d(tag, props, ...children) {
 
@@ -13,8 +14,9 @@ export default function d(tag, props, ...children) {
             component.state = (n) => {
                 const newobj = component.view()
                 const patches = diff(newobj, element)
-                console.log(patches)
-               element.patch(patches, newobj)
+
+
+                element.patch(patches, newobj)
             }
 
             return element;

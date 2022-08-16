@@ -19,7 +19,7 @@ case REORDER: {
       return parent.replaceChild(newEl, el)
     };
     
-    case TEXT: {console.log(el,patches)
+    case TEXT: {
       if (el.textContent) el.textContent = patches.value
       else if(el.nodeValue)el.nodeValue = patches.value
       return;

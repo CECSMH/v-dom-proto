@@ -17,18 +17,18 @@ export default class Home extends Component {
             this.eu = !this.eu
         },1000) */
         this.teste = `${Math.random()}`
-        
+
         this.eu = !this.eu
         this.olocck = '32123'
-        this.seq = this.eu ? [1,2,3,4,5]: [5,4,3,2,1]
+        this.seq = this.eu ? [1, 2, 3, 4, 5] : [5, 4, 3, 2, 1]
     }
 
     handle() {
         this.teste = `${Math.random()}`
-        
+
         this.eu = !this.eu
         this.olocck = this.seq.join(', ')
-        this.seq = this.eu ? [1,2,3,4,5]: [5,4,3,2,1]
+        this.seq = this.eu ? [1, 2, 3, 4, 5] : [5, 4, 3, 2, 1]
         this.state()
     }
 
@@ -38,9 +38,9 @@ export default class Home extends Component {
                 <h2>{this.teste}</h2>
 
                 <Input value={this.teste} />
-
-                {this.seq.map(el => (<h3 key={el}>{el + 'str'}</h3>))}
-
+                <div style="background: rgba(255, 0, 255, 0.2);">
+                    {this.seq.map(el => (<h3 key={el + ''}>{el + 'str'}</h3>))}
+                </div>
                 {this.eu ? <h2>h2 h2</h2> : 'teste de no de texto'}
 
                 <h1>{this.teste}</h1>

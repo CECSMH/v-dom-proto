@@ -7,15 +7,15 @@ import { REORDER, REPLACE } from "../utils/utils"
  * @return {Object} - {moves: <Array>}
  *                  - moves is a list of actions that telling how to remove and insert
  */
- export default function Ldiff (oldList, newList, key) {
+export default function listdiff (oldList, newList, key) {
     var oldMap = makeKeyIndexAndFree(oldList, key)
     var newMap = makeKeyIndexAndFree(newList, key)
-  
+    
     var newFree = newMap.free
   
     var oldKeyIndex = oldMap.keyIndex
     var newKeyIndex = newMap.keyIndex
-  
+
     var moves = []
   
     // a simulate list to manipulate
@@ -143,5 +143,4 @@ import { REORDER, REPLACE } from "../utils/utils"
       ? item[key]
       : key(item)
   }
-  
   

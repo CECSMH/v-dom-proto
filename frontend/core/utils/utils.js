@@ -20,13 +20,12 @@ export function changed(n1, n2) {
 }
 
 
-const CREATE = 'CREATE'
-const REMOVE = 'REMOVE'
-const REPLACE = 'REPLACE'
-const UPDATE = 'UPDATE'
-const SET_PROP = 'SET_PROP'
-const REMOVE_PROP = 'REMOVE PROP'
-const TEXT = 'TEXT'
-const REORDER = 'REORDER'
+const CREATE = 'CREATE';
+const REMOVE = 'REMOVE';
+const REPLACE = 'REPLACE';
+const UPDATE = 'UPDATE';
+const SET_PROP = 'SET_PROP';
+const REMOVE_PROP = 'REMOVE PROP';
+const TEXT = 'TEXT';
 
 export {CREATE, REMOVE, REPLACE, UPDATE, SET_PROP, REMOVE_PROP, TEXT, REORDER}
