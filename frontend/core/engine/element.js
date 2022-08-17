@@ -6,7 +6,8 @@ export default class Element {
     constructor(tag, props, ...children) {
         this.type = tag;
         this.props = props || {};
-        this.children = children.flat();
+        this.children = children.flat().filter(el => el);
+
         this.element
     };
 
@@ -34,13 +35,12 @@ export default class Element {
         return this.element;
     };
 
-    patch(pt, newobj) {
-        if (this.element) {
-            console.log(pt)
-            patch(this.element.parentNode, pt)
+    patch(patches, newobj) {
+        if (this.element) {console.log(patches)
+            patch(this.element.parentNode, patches)
 
             Object.assign(this, newobj)
-        }
-    }
+        };
+    };
 }
 

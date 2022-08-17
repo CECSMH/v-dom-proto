@@ -5,7 +5,7 @@ import Box from '../components/box/box.js'
 import Input from '../components/input/input.js'
 
 
-export default class Home extends Component {
+export default class Home2 extends Component {
     preInit() {
         this.teste = 'kkkkk'
         this.eu = false
@@ -38,11 +38,16 @@ export default class Home extends Component {
     view() {
         return (
             <Main userName="carlos" >
-                <section class="vertical-boxes"> 
+                <section class="horizontal-boxes"> 
                     <Box>
+                        <Input title="texto" />
                         <Input title="data" type="date"/>
                         <Input title="switch" type="toogle"/>
+                    </Box>
+                    <Box>
                         <Input title="texto" />
+                        <Input title="data" type="date"/>
+                        <Input title="switch" type="toogle"/>
                     </Box>
                 </section>
             </Main>

@@ -1,4 +1,5 @@
-import d from "../engine/createElement.js";
+import h from "../engine/createElement.js";
+import { diff } from "../engine/diff.js";
 import pb from "../engine/pubsub.js";
 import Routes from "./routes.js";
 
@@ -8,6 +9,7 @@ let rootElement = document.querySelector('#root');
 let linkSelector = '[link]';
 let defaultPath = '/';
 let notFoundPath = '';
+let currentDom;
 
 export default function app() {
     return {
@@ -93,7 +95,14 @@ function router() {
 
 
         const el = (<Component params={params} query={query} />)
-        rootElement.replaceChildren(el.render()); console.log(el)
+
+        if(currentDom){
+            currentDom.patch(diff(el, currentDom), el) 
+        }else{
+            rootElement.replaceChildren(el.render())
+            currentDom = el
+        }
+
 
         pb.publish('component', {});
     };
