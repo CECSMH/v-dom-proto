@@ -18,9 +18,9 @@ export default class Element {
         foreach(props, (value, name) => {
             if (name.startsWith("on") && name.toLowerCase() in window) value && this.element.addEventListener(name.toLowerCase().substring(2), value);
 
-            else if (name === 'var') value && (this.el.var = value);
+            else if (name === 'var') value && (this.element.var = value);
 
-            else if (name === 'sh-if') value && (this.el.sh_if = value);
+            else if (name === 'sh-if') value && (this.element.sh_if = value);
 
             else this.element.setAttribute(name, value && value.toString());
         })
@@ -32,6 +32,7 @@ export default class Element {
             this.element.appendChild(childEl);
         })
 
+        this.element._owner_ = this;
         return this.element;
     };
 

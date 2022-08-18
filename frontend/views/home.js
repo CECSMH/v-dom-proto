@@ -43,6 +43,7 @@ export default class Home extends Component {
                         <Input title="data" type="date"/>
                         <Input title="switch" type="toogle"/>
                         <Input title="texto" />
+                        <h2 id="nsd" class="nn">kkk</h2>
                     </Box>
                 </section>
             </Main>

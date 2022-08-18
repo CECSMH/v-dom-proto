@@ -1,4 +1,4 @@
-import { CREATE, isStr, REMOVE, REMOVE_PROP, REPLACE, SET_PROP, TEXT, UPDATE } from "../utils/utils.js";
+import { CREATE, foreach, isStr, REMOVE, REMOVE_PROP, REPLACE, SET_PROP, TEXT, UPDATE } from "../utils/utils.js";
 
 export function patch(parent, patches, index = 0) {
   if (!patches) return;
@@ -20,9 +20,9 @@ export function patch(parent, patches, index = 0) {
     };
 
     case UPDATE: {
-      const { props, children } = patches;
-      patchProps(el, props);
-      for (let i = 0; i < children.length; i++) { patch(el, children[i], i) };
+      patchProps(el, patches.props);
+
+      foreach(patches.children, (child, i) => patch(el, child, i));
     };
   };
 };

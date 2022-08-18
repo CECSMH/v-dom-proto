@@ -40,9 +40,11 @@ export default class Home2 extends Component {
             <Main userName="carlos" >
                 <section class="horizontal-boxes"> 
                     <Box>
+                        <Input title="switch" type="date"/>
                         <Input title="texto" />
                         <Input title="data" type="date"/>
                         <Input title="switch" type="toogle"/>
+                        <h2 id="mudou" class="mudado">mudou</h2>
                     </Box>
                     <Box>
                         <Input title="texto" />
